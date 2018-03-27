@@ -10,7 +10,7 @@ class TeamItem extends Component{
         return(
             <TouchableWithoutFeedback>
                 <View>
-                    <Image style={{width: 100, height: 100}} source={logo} />
+                    <Image style={{flex:1, height: 100, width: 100, alignSelf: 'stretch',}} source={logo} resizeMode="contain"/>
                     <Text>{ name }</Text>
                     <Text>{ shortName }</Text>
                 </View>
