@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import { getTeams } from '../actions/TeamActions';
 import _ from 'lodash';
+import TeamItem from './TeamItem';
 
 class HomePage extends Component{
 
@@ -27,7 +28,7 @@ class HomePage extends Component{
     renderRow(team){
         // Return here a single row
         console.log(team)
-        return <Text>{team.name}</Text>
+        return <TeamItem team={team} />
     }
     render(){
         return(
