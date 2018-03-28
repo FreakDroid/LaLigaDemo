@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, TouchableWithoutFeedback, View, Image} from 'react-native';
+import { Text, TouchableWithoutFeedback, View, Image, ActivityIndicator} from 'react-native';
 import { thumbnails } from '../Util/Logo';
 
 class TeamItem extends Component{
@@ -9,10 +9,17 @@ class TeamItem extends Component{
         let logo = thumbnails[code];
         return(
             <TouchableWithoutFeedback>
-                <View>
-                    <Image style={{flex:1, height: 100, width: 100, alignSelf: 'stretch',}} source={logo} resizeMode="contain"/>
-                    <Text>{ name }</Text>
-                    <Text>{ shortName }</Text>
+                <View style={{flexDirection:'row', alignSelf: 'stretch'}}>
+                    <View>
+                        <Image 
+                            style={{flex:1, height: 50, width: 50, alignSelf: 'stretch'}} 
+                            source={logo} 
+                            resizeMode="contain"/>
+                    
+                    </View>
+                    <View>
+                        <Text>{ name }</Text>
+                    </View>
                 </View>
             </TouchableWithoutFeedback>
         )

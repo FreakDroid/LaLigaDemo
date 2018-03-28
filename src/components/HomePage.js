@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, ListView, RefreshControl} from 'react-native';
+import { View, ScrollView, Text, ListView, RefreshControl, ActivityIndicator} from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { getTeams } from '../actions/TeamActions';
@@ -8,6 +8,8 @@ import TeamItem from './TeamItem';
 
 class HomePage extends Component{
 
+    state = { showLoading: true };
+
     componentWillMount(){
         this.props.getTeams();
         this.createDataSource(this.props);
@@ -15,6 +17,7 @@ class HomePage extends Component{
 
     componentWillReceiveProps(nextProps){
         this.createDataSource(nextProps);
+        
     }
 
     createDataSource({ teams }){
@@ -25,6 +28,10 @@ class HomePage extends Component{
         this.dataSource = ds.cloneWithRows(teams)
     }
 
+    componentDidMount(){
+        this.setState({ showLoading: false});
+    }
+
     renderRow(team){
         // Return here a single row
         console.log(team)
@@ -33,7 +40,7 @@ class HomePage extends Component{
     render(){
         return(
             <ScrollView>
-                <Text>This is HomePage</Text>
+                <ActivityIndicator animating={this.state.showLoading} size="large" color="#0000ff"/>
                 <ListView
                     dataSource={this.dataSource}
                     renderRow={this.renderRow }
