@@ -9,15 +9,14 @@ class TeamItem extends Component{
         let logo = thumbnails[code];
         return(
             <TouchableWithoutFeedback>
-                <View style={{flexDirection:'row', alignSelf: 'stretch'}}>
+                <View style={{flexDirection:'row', alignSelf: 'stretch', padding:5}}>
                     <View>
                         <Image 
                             style={{flex:1, height: 50, width: 50, alignSelf: 'stretch'}} 
                             source={logo} 
                             resizeMode="contain"/>
-                    
                     </View>
-                    <View>
+                    <View style={{justifyContent: 'center', alignItems: 'center', padding:5 }}>
                         <Text>{ name }</Text>
                     </View>
                 </View>

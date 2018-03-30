@@ -20,8 +20,8 @@ export default class App extends Component{
     return (
 
       <Provider store={store}>
-          <View style={{flex:1}}>
-            <View>
+          <View style={{flex:1, marginTop: 50}}>
+            <View style={{alignContent: 'center', flexDirection: 'row'}}>
               <Text>La Liga</Text>
             </View>
             <TabMenu />

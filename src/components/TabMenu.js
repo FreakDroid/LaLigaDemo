@@ -16,7 +16,7 @@ class TabMenu extends Component{
     render(){
         return(
             <ScrollableTabView
-            style={{marginTop: 20, }}
+            style={{}}
             initialPage={0}
             renderTabBar={() => <FacebookTabBar />}>
                 <HomePage tabLabel="soccer-field" />

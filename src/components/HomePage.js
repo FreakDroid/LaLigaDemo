@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, ListView, RefreshControl, ActivityIndicator} from 'react-native';
+import { View, ScrollView, Text, ListView, StyleSheet, RefreshControl, ActivityIndicator} from 'react-native';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { getTeams } from '../actions/TeamActions';
@@ -40,15 +40,13 @@ class HomePage extends Component{
     render(){
         return(
             <ScrollView>
-                <ActivityIndicator animating={this.state.showLoading} size="large" color="#0000ff"/>
                 <ListView
                     dataSource={this.dataSource}
                     renderRow={this.renderRow }
                     enableEmptySections={true}
+                    renderSeparator={ (sectionId, rowId) => <View key={rowId} style={style.separator} />}
                 >
-
                 </ListView>
-                
             </ScrollView>
         )
     }
@@ -58,5 +56,16 @@ const mapStateToProps = state => {
     console.log ( "Mapstatetoprops ", state.teams);
    return { teams: state.teams }
 }
+
+const style = StyleSheet.create({
+    /*
+     * Removed for brevity
+     */
+    separator: {
+      flex: 1,
+      height: StyleSheet.hairlineWidth,
+      backgroundColor: '#8E8E8E',
+    },
+  });
 
 export default connect(mapStateToProps, {getTeams} )(HomePage);
