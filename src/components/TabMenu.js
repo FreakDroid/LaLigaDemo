@@ -15,6 +15,7 @@ class TabMenu extends Component{
     
     render(){
         return(
+          <View style={{flex:1}}>
             <ScrollableTabView
             style={{}}
             initialPage={0}
@@ -31,6 +32,7 @@ class TabMenu extends Component{
                   </View>
                 </ScrollView>
             </ScrollableTabView>
+        </View>
         )
     }
 }
