@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { Text, TouchableWithoutFeedback, View, Image, ActivityIndicator} from 'react-native';
 import { thumbnails } from '../Util/Logo';
+import { Actions } from 'react-native-router-flux';
 
 class TeamItem extends Component{
+
+    onPress(){
+        Actions.teamDetail();
+    }
 
     render(){
         const { crestURL, name, shortName, code } = this.props.team;
         let logo = thumbnails[code];
         return(
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={this.onPress}>
                 <View style={{flexDirection:'row', alignSelf: 'stretch', padding:5}}>
                     <View>
                         <Image 

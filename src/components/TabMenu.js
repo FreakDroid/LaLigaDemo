@@ -9,7 +9,7 @@ import {
   } from 'react-native';
   import ScrollableTabView, { DefaultTabBar } from 'react-native-scrollable-tab-view';
   import FacebookTabBar from './common/FacebookTabBar';
-  import HomePage from './HomePage';
+  import TeamListPage from './TeamListPage';
 
 class TabMenu extends Component{
     
@@ -20,7 +20,7 @@ class TabMenu extends Component{
             style={{}}
             initialPage={0}
             renderTabBar={() => <FacebookTabBar />}>
-                <HomePage tabLabel="soccer-field" />
+                <TeamListPage tabLabel="soccer-field" />
                 <ScrollView tabLabel="account" style={styles.tabView}>
                   <View style={styles.card}>
                     <Text>Friends</Text>

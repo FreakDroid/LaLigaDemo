@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text, ListView, StyleSheet, RefreshControl, ActivityIndicator} from 'react-native';
+import { View, ScrollView, Text, ListView, StyleSheet, RefreshControl, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
-import axios from 'axios';
 import { getTeams } from '../actions/TeamActions';
 import _ from 'lodash';
 import TeamItem from './TeamItem';
 
-class HomePage extends Component{
+class TeamListPage extends Component{
 
     state = { showLoading: true };
 
@@ -68,4 +67,4 @@ const style = StyleSheet.create({
     },
   });
 
-export default connect(mapStateToProps, {getTeams} )(HomePage);
+export default connect(mapStateToProps, {getTeams} )(TeamListPage);
