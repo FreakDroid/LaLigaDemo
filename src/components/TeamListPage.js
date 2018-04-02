@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { View, ScrollView, Text, ListView, StyleSheet, RefreshControl, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { getTeams } from '../actions/TeamActions';
-import _ from 'lodash';
 import TeamItem from './TeamItem';
 
 class TeamListPage extends Component{
@@ -52,8 +51,8 @@ class TeamListPage extends Component{
 }
 
 const mapStateToProps = state => {
-    console.log ( "Mapstatetoprops ", state.teams);
-   return { teams: state.teams }
+    console.log("My state ", state);
+   return { teams: state.teams.teams }
 }
 
 const style = StyleSheet.create({
